@@ -14,27 +14,17 @@ public class Test {
          System.out.println("ВВедите свою дату рождения, пример 21 января 1974 г");
          String input = scanner.nextLine();
          
-         
-         
          DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("d MMMM yyyy г");
-        
          
          LocalDate birthDate = LocalDate.parse(input, dateFormatter);
 
-         // Определение знака зодиака
          String zodiacSign = getZodiacSign(birthDate);
 
-         // Определение года по китайскому календарю
          int year = birthDate.getYear();
          String chineseYear = getChineseZodiac(year);
 
-         // Вывод результата
          System.out.println("Знак: " + zodiacSign);
          System.out.println("Год: " + chineseYear);
-        
-       
-        
-        
         
 	}
 	public static String getZodiacSign(LocalDate date) {
