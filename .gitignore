@@ -41,3 +41,9 @@ settings.xml
 *.user
 *.sublime-workspace
 *.sublime-project
+
+# Ignore large media files in images folder
+file-uploader/images/*.mp4
+file-uploader/images/*.jpg
+file-uploader/images/*.pdf
+
