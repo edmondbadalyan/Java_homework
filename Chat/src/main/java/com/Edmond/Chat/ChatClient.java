@@ -14,11 +14,11 @@ import java.util.List;
 
 public class ChatClient {
 
-    private JFrame frame;
-    private JTextArea chatArea;
-    private JTextField inputField;
-    private JTextField usernameField;
-    private PrintWriter out;
+    JFrame frame;
+    JTextArea chatArea;
+    JTextField inputField;
+    JTextField usernameField;
+    PrintWriter out;
 
     public ChatClient() {
         frame = new JFrame("Chat Client");
@@ -89,7 +89,7 @@ public class ChatClient {
         }
     }
 
-    private void sendMessage() {
+    void sendMessage() {
         String message = inputField.getText();
         String username = usernameField.getText();
         if (!message.isEmpty() && !username.equals("Введите имя")) {
@@ -112,6 +112,15 @@ public class ChatClient {
             e.printStackTrace();
         }
     }
+    
+    public void setUsername(String username) {
+        usernameField.setText(username);
+    }
+
+    public void setMessage(String message) {
+        inputField.setText(message);
+    }
+
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(ChatClient::new);

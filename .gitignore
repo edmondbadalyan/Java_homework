@@ -47,3 +47,19 @@ file-uploader/images/*.mp4
 file-uploader/images/*.jpg
 file-uploader/images/*.pdf
 
+# Папки сгенерированных байт-кодов
+/target/
+
+# Локальные настройки Maven
+.mvn/
+.settings.xml
+
+
+# Файлы временной сборки
+*.tmp
+*.bak
+*.swp
+
+.idea/tomcat/
+.settings/tomcat/
+servers/
