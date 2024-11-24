@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Список покупок</title>
+</head>
+<body>
+    <h1>Список покупок</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Имя клиента</th>
+                <th>Адрес</th>
+                <th>Дата заказа</th>
+                <th>Продукты</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="order, iterStat : ${orders}">
+                <td th:text="${iterStat.index + 1}"></td> <!-- Порядковый номер -->
+                <td th:text="${order.customerName}"></td> <!-- Имя клиента -->
+                <td th:text="${order.customerAddress}"></td> <!-- Адрес -->
+                <td th:text="${#dates.format(order.date, 'dd-MM-yyyy')}"></td> <!-- Дата -->
+                <td>
+                    <ul>
+                        <li th:each="product : ${order.products}" th:text="${product.name}"></li> <!-- Продукты -->
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
